@@ -21,13 +21,15 @@ new class extends Component {
 			<th>ID</th>
 			<th>Name</th>
 			<th>Description</th>
+			<th>Actions</th>
 		</thead>
 		<tbody>
 			@foreach ($domains as $domain)
-				<tr>
+				<tr wire:key={{  $domain->id }}>
 					<td class="px-4">{{ $domain->id }}</td>
 					<td class="px-4">{{ $domain->name }}</td>
 					<td class="px-4">{{ $domain->description }}</td>
+					<td class="flex gap-4 px-4 text-blue-500"><a href="#">Edit</a></td>
 				</tr>
 			@endforeach
 		</tbody>

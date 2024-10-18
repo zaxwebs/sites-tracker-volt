@@ -25,7 +25,7 @@ new class extends Component {
 <form wire:submit="save">
 	<div class="mb-4">
 		<div>Name</div>
-		<x-text-input type="text" wire:model="name" />
+		<x-text-input type="text" wire:model.blur="name" />
 		@error('name')
 			<div class="text-red-500">{{ $message }}</div>
 		@enderror
