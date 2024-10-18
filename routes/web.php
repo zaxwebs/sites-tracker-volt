@@ -1,12 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Livewire\Counter;
 use Livewire\Volt\Volt;
 
-Route::get('/', function () {
-	return view('welcome');
-});
+Route::view('/', 'welcome');
 
-Route::get('/counter', Counter::class);
-Volt::route('/adder', 'adder');
+Route::view('dashboard', 'dashboard')
+	->middleware(['auth', 'verified'])
+	->name('dashboard');
+
+Route::view('profile', 'profile')
+	->middleware(['auth'])
+	->name('profile');
+
+Volt::route('/domains/create', 'create-domain');
+
+require __DIR__ . '/auth.php';
