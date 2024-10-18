@@ -23,16 +23,16 @@ new class extends Component {
 
 }; ?>
 <form wire:submit="save">
-	<div>
+	<div class="mb-4">
 		<div>Name</div>
-		<input type="text" wire:model="name">
+		<x-text-input type="text" wire:model="name" />
 		@error('name')
 			<div class="text-red-500">{{ $message }}</div>
 		@enderror
 	</div>
-	<div>
+	<div class="mb-4">
 		<div>Description</div>
-		<input type="text" wire:model="description">
+		<x-text-input type="text" wire:model="description" />
 	</div>
 	<div>
 		<x-primary-button>
