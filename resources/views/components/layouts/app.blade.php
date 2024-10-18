@@ -17,7 +17,9 @@
 </head>
 
 <body>
-	{{ $slot }}
+	<div class="p-6">
+		{{ $slot }}
+	</div>
 </body>
 
 </html>
