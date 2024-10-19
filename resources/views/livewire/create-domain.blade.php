@@ -35,6 +35,8 @@ new class extends Component {
 		$domain->tags()->sync($this->selectedTags);
 
 		$this->reset(['name', 'description', 'selectedTags']);
+
+		$this->dispatch('domain-created');
 	}
 
 };

@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Domain;
+use Livewire\Attributes\On;
 use Livewire\Volt\Component;
 
 new class extends Component {
@@ -9,6 +10,11 @@ new class extends Component {
 
 	public function mount()
 	{
+		$this->getDomains();
+	}
+
+	#[On('domain-created')]
+	public function getDomains() {
 		$this->domains = Domain::with('tags')->get();
 	}
 

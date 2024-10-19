@@ -14,6 +14,7 @@ Route::view('profile', 'profile')
 	->name('profile');
 
 Volt::route('/domains/create', 'create-domain');
+Volt::route('/domains/manager', 'domains');
 Volt::route('/domains', 'index-domains');
 Volt::route('/domains/{id}', 'show-domain');
 
