@@ -9,7 +9,7 @@ new class extends Component {
 
 	public function mount()
 	{
-		$this->domains = Domain::all();
+		$this->domains = Domain::with('tags')->get();
 	}
 
 
@@ -21,6 +21,7 @@ new class extends Component {
 			<th>ID</th>
 			<th>Name</th>
 			<th>Description</th>
+			<th>Tags</th>
 			<th>Actions</th>
 		</thead>
 		<tbody>
@@ -31,6 +32,11 @@ new class extends Component {
 					</td>
 					<td class="px-4">{{ $domain->name }}</td>
 					<td class="px-4">{{ $domain->description }}</td>
+					<td class="max-w-sm px-4">
+						@foreach ($domain->tags as $tag)
+							<span class="mr-1">{{ $tag->name }}</span>
+						@endforeach
+					</td>
 					<td class="flex gap-4 px-4 text-blue-500">
 						<a href="#">Edit</a>
 						<a href="#">Delete</a>
