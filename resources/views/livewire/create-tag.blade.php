@@ -6,7 +6,7 @@ use Livewire\Attributes\Validate;
 
 new class extends Component {
 
-	#[Validate('required')]
+	#[Validate('required|unique:tags,name')]
 	public $name = '';
 
 	public function save()
