@@ -2,6 +2,7 @@
 
 use App\Models\Tag;
 use App\Models\Domain;
+use Livewire\Attributes\On;
 use Livewire\Volt\Component;
 use Livewire\Attributes\Validate;
 
@@ -19,6 +20,12 @@ new class extends Component {
 	public function mount()
 	{
 		$this->tags = Tag::all(); // Get all tags to populate the dropdown
+	}
+
+	#[On('tag-created')]
+	public function getTags()
+	{
+		$this->tags = Tag::all();
 	}
 
 	public function save()

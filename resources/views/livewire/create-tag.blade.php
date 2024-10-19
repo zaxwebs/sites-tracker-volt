@@ -19,6 +19,8 @@ new class extends Component {
 		]);
 
 		$this->reset();
+
+		$this->dispatch('tag-created');
 	}
 }; ?>
 

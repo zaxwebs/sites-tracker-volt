@@ -21,6 +21,7 @@
 		<nav class="flex gap-4 mb-6 text-blue-500">
 			<a wire:navigate href="/domains/create">Create Domain</a>
 			<a wire:navigate href="/domains">List Domains</a>
+			<a wire:navigate href="/domains/manager">Domain Manager</a>
 			<a wire:navigate href="/tags/create">Create Tag</a>
 			<a wire:navigate href="/tags">List Tags</a>
 		</nav>
