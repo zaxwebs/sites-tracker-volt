@@ -18,6 +18,10 @@
 
 <body>
 	<div class="p-6">
+		<nav class="flex gap-4 mb-6 text-blue-500">
+			<a href="/domains/create">Create Domain</a>
+			<a href="/domains">List Domains</a>
+		</nav>
 		{{ $slot }}
 	</div>
 </body>

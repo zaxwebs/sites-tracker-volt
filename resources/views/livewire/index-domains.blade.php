@@ -29,7 +29,10 @@ new class extends Component {
 					<td class="px-4">{{ $domain->id }}</td>
 					<td class="px-4">{{ $domain->name }}</td>
 					<td class="px-4">{{ $domain->description }}</td>
-					<td class="flex gap-4 px-4 text-blue-500"><a href="#">Edit</a></td>
+					<td class="flex gap-4 px-4 text-blue-500">
+						<a href="#">Edit</a>
+						<a href="#">Delete</a>
+					</td>
 				</tr>
 			@endforeach
 		</tbody>

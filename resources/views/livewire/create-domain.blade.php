@@ -14,11 +14,14 @@ new class extends Component {
 	public function save()
 	{
 		$this->validate();
+
 		// Create a new domain
 		$domain = Domain::create([
 			'name' => $this->name,
 			'description' => $this->description
 		]);
+
+		$this->reset();
 	}
 
 }; ?>
