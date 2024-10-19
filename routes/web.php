@@ -17,4 +17,7 @@ Volt::route('/domains/create', 'create-domain');
 Volt::route('/domains', 'index-domains');
 Volt::route('/domains/{id}', 'show-domain');
 
+Volt::route('/tags/create', 'create-tag');
+Volt::route('/tags', 'index-tags');
+
 require __DIR__ . '/auth.php';

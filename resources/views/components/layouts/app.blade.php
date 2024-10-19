@@ -21,6 +21,8 @@
 		<nav class="flex gap-4 mb-6 text-blue-500">
 			<a href="/domains/create">Create Domain</a>
 			<a href="/domains">List Domains</a>
+			<a href="/tags/create">Create Tag</a>
+			<a href="/tags">List Tags</a>
 		</nav>
 		{{ $slot }}
 	</div>

@@ -15,7 +15,7 @@ new class extends Component {
 }; ?>
 
 <div>
-	<table>
+	<table class="mb-6">
 		<tbody>
 			<tr>
 				<th class="pr-4 text-left">ID</th>
@@ -31,4 +31,8 @@ new class extends Component {
 			</tr>
 		</tbody>
 	</table>
+	<div class="flex gap-4 text-blue-500">
+		<a href="#">Edit</a>
+		<a href="#">Delete</a>
+	</div>
 </div>
