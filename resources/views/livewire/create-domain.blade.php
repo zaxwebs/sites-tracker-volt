@@ -40,29 +40,47 @@ new class extends Component {
 };
 ?>
 
-<form wire:submit.prevent="save">
-	<div class="mb-4">
-		<div>Name</div>
-		<x-text-input type="text" wire:model.blur="name" />
-		@error('name')
-			<div class="text-red-500">{{ $message }}</div>
-		@enderror
-	</div>
-	<div class="mb-4">
-		<div>Description</div>
-		<x-text-input type="text" wire:model="description" />
-	</div>
-	<div class="mb-4">
-		<div>Tags</div>
-		<select wire:model="selectedTags" multiple class="w-full max-w-48">
-			@foreach($tags as $tag)
-				<option value="{{ $tag->id }}">{{ $tag->name }}</option>
-			@endforeach
-		</select>
-	</div>
-	<div>
-		<x-primary-button>
-			{{ __('Create Domain') }}
-		</x-primary-button>
-	</div>
-</form>
+<div>
+	<form wire:submit.prevent="save">
+		<div class="mb-4">
+			<div>Name</div>
+			<x-text-input type="text" wire:model.blur="name" />
+			@error('name')
+				<div class="text-red-500">{{ $message }}</div>
+			@enderror
+		</div>
+		<div class="mb-4">
+			<div>Description</div>
+			<x-text-input type="text" wire:model="description" />
+		</div>
+		<div class="mb-4">
+			<div class="flex gap-6">
+				<div>
+					<div>Tags</div>
+					<select wire:model="selectedTags" multiple class="min-w-40">
+						@foreach($tags as $tag)
+							<option value="{{ $tag->id }}">{{ $tag->name }}</option>
+						@endforeach
+					</select>
+				</div>
+				<div>
+					<x-secondary-button class="mt-6" x-data=""
+						x-on:click.prevent="$dispatch('open-modal', 'create-tag')">
+						Create Tag
+					</x-secondary-button>
+				</div>
+			</div>
+		</div>
+		<div>
+			<x-primary-button>
+				Create Domain
+			</x-primary-button>
+		</div>
+	</form>
+
+	<x-modal name="create-tag">
+		<div class="p-4">
+			<livewire:create-tag />
+		</div>
+	</x-modal>
+</div>
