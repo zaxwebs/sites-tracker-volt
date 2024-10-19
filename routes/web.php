@@ -15,5 +15,6 @@ Route::view('profile', 'profile')
 
 Volt::route('/domains/create', 'create-domain');
 Volt::route('/domains', 'index-domains');
+Volt::route('/domains/{id}', 'show-domain');
 
 require __DIR__ . '/auth.php';

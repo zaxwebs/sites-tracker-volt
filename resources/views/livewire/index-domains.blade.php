@@ -26,7 +26,9 @@ new class extends Component {
 		<tbody>
 			@foreach ($domains as $domain)
 				<tr wire:key={{  $domain->id }}>
-					<td class="px-4">{{ $domain->id }}</td>
+					<td class="px-4">
+						<a class="text-blue-500" href="/domains/{{ $domain->id }}">{{ $domain->id }}</a>
+					</td>
 					<td class="px-4">{{ $domain->name }}</td>
 					<td class="px-4">{{ $domain->description }}</td>
 					<td class="flex gap-4 px-4 text-blue-500">
