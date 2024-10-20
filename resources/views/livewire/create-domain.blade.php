@@ -33,7 +33,6 @@ new class extends Component {
 	{
 		$this->getTags();
 		$this->selectedTags[] = $id;
-
 		$this->dispatch('close-modal', 'create-tag');
 	}
 

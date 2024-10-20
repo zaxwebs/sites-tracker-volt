@@ -2,6 +2,7 @@
 
 use App\Models\Tag;
 use Livewire\Volt\Component;
+use Masmerise\Toaster\Toaster;
 use Livewire\Attributes\Validate;
 
 new class extends Component {
@@ -21,6 +22,7 @@ new class extends Component {
 		$this->reset();
 
 		$this->dispatch('tag-created', id: $tag->id);
+		Toaster::success('Tag created!');
 	}
 }; ?>
 
