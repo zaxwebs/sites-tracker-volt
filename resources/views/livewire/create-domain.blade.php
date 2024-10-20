@@ -4,6 +4,7 @@ use App\Models\Tag;
 use App\Models\Domain;
 use Livewire\Attributes\On;
 use Livewire\Volt\Component;
+use Masmerise\Toaster\Toaster;
 use Livewire\Attributes\Validate;
 
 new class extends Component {
@@ -52,13 +53,13 @@ new class extends Component {
 		$this->reset(['name', 'description', 'selectedTags']);
 
 		$this->dispatch('domain-created');
+		Toaster::success('Domain created!');
 	}
 
 };
 ?>
 
 <div>
-	<div x-data="" x-on:tag-created.window="console.log('tag-created')"></div>
 	<form wire:submit.prevent="save">
 		<div class="mb-4">
 			<div>Name</div>
