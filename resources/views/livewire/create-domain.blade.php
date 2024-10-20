@@ -19,13 +19,19 @@ new class extends Component {
 
 	public function mount()
 	{
-		$this->tags = Tag::all(); // Get all tags to populate the dropdown
+		$this->getTags(); // Get all tags to populate the dropdown
 	}
 
-	#[On('tag-created')]
 	public function getTags()
 	{
 		$this->tags = Tag::all();
+	}
+
+	#[On('tag-created')]
+	public function handleNewTag($id)
+	{
+		$this->getTags();
+		$this->selectedTags[] = $id;
 	}
 
 	public function save()
@@ -68,7 +74,10 @@ new class extends Component {
 					<div>Tags</div>
 					<select wire:model="selectedTags" multiple class="min-w-40">
 						@foreach($tags as $tag)
-							<option value="{{ $tag->id }}">{{ $tag->name }}</option>
+							{{-- in_array trick is a quick fix to new tag not highlighted as selected --}}
+							<option value="{{ $tag->id }}" @if(in_array($tag->id, $selectedTags)) selected @endif>
+								{{ $tag->name }}
+							</option>
 						@endforeach
 					</select>
 				</div>

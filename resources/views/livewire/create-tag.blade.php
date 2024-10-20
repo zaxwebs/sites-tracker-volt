@@ -20,7 +20,7 @@ new class extends Component {
 
 		$this->reset();
 
-		$this->dispatch('tag-created');
+		$this->dispatch('tag-created', id: $tag->id);
 	}
 }; ?>
 
