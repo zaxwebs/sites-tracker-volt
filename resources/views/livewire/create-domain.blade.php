@@ -32,6 +32,8 @@ new class extends Component {
 	{
 		$this->getTags();
 		$this->selectedTags[] = $id;
+
+		$this->dispatch('close-modal', 'create-tag');
 	}
 
 	public function save()
@@ -56,6 +58,7 @@ new class extends Component {
 ?>
 
 <div>
+	<div x-data="" x-on:tag-created.window="console.log('tag-created')"></div>
 	<form wire:submit.prevent="save">
 		<div class="mb-4">
 			<div>Name</div>
